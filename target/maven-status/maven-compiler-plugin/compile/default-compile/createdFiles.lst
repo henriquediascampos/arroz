@@ -1,0 +1,10 @@
+arroz/models/cidade/CidadeService.class
+arroz/models/cidade/CidadeController.class
+arroz/controllers/HomeController.class
+arroz/models/generic/GenericDAO.class
+arroz/models/usuario/UsuarioController.class
+arroz/Boot.class
+arroz/models/generic/GenericDAOImpl.class
+arroz/models/cidade/CidadeServiceImpl.class
+arroz/models/cidade/Cidade.class
+arroz/models/cidade/CidadeDAO.class
