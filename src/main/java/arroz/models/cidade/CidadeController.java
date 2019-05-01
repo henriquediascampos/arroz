@@ -16,12 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 
-
-
-/**
- * @author Janilson Joao de Andrade
- * @version 0.1
- */
 @RestController
 @RequestMapping(value = "/cidade")
 public class CidadeController extends AbstractController {
@@ -34,7 +28,7 @@ public class CidadeController extends AbstractController {
         return cidadeService.findById(id);
     }
 
-    @RequestMapping(method = {RequestMethod.GET})
+    @RequestMapping(method = {RequestMethod.GET}, value= "/lista")
     public List<Cidade> lista() {
         return cidadeService.findAll();
     }

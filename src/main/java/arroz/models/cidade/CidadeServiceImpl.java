@@ -9,15 +9,20 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional // lembra do beginTransaction
 public class CidadeServiceImpl implements CidadeService {
-
+    @Autowired
+    private CidadeDAO cidadeDAO;
 
     public CidadeServiceImpl() {
+    }
+    
+    @Override
+    public List<Cidade> findAll() {
+        return cidadeDAO.findAll();
     }
 
     @Override
     public Cidade findById(Long id) {
-        // return cidadeDAO.findById(id);
-        return null;
+        return cidadeDAO.findById(id);
     }
 
     @Override
@@ -35,8 +40,4 @@ public class CidadeServiceImpl implements CidadeService {
 
     }
 
-    @Override
-    public List<Cidade> findAll() {
-        return null;
-    }
 }

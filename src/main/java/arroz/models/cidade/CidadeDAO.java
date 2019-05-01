@@ -2,6 +2,13 @@ package arroz.models.cidade;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.websocket.Session;
+
+import org.hibernate.Criteria;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,39 +18,36 @@ import arroz.models.generic.GenericDAOImpl;
 @Transactional
 public class CidadeDAO extends GenericDAOImpl<Cidade, Long> {
 
-	@Override
-	public Cidade save(Cidade entity) {
-		return null;
+	public void save(Cidade entity) {
+		entityManager.persist(entity);		
 	}
 
-	@Override
 	public void delete(Long id) {
-		
+		// Criteria criteria = session.
 	}
 
-	@Override
 	public Cidade update(Cidade entity) {
+		EntityManager ef = entityManagerFactory.createEntityManager();
+		
+		
 		return null;
 	}
 
-	@Override
-	public List<Cidade> findAll() {
-		return null;
-	}
-
-	@Override
 	public String executQuery(String query) {
 		return null;
 	}
 
-	@Override
 	public void flush() {
 		
 	}
 
-	@Override
 	public Cidade findById(Long id) {
-		return null;
+		return entityManager.find(Cidade.class, id);
+	}
+
+	public List<Cidade> findAll() {
+		String sql = "from Cidade";
+		return (List<Cidade>) entityManager.createQuery(sql).getResultList();
 	}
 
 }
